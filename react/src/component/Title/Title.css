@@ -1,0 +1,24 @@
+/*  title*/
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-title-bg);
+  color: var(--color-font);
+  white-space: pre-wrap;
+}
+
+.title-head {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Black Han Sans", sans-serif;
+  margin-bottom: 24px;
+  animation: fadein 3s;
+}
+
+.title-desc {
+  animation: fadein 5s;
+}

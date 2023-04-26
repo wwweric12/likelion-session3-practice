@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
+:root {
+  --color-header: #4289a7;
+  --color-header-bg: #cce6fd;
+  --color-header-bar: #8ac2f7;
+  --color-btn: #2b292d;
+  --color-btn-hover: #2b292d;
+  --color-title-bg: #d8f6fd;
+  --color-white-bg: #fff;
+  --color-font: #3b9bf5;
+  --color-desc: #2b292d;
+  --color-footer: #d2f3fcfd;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html.dark {
+  --color-header-bg: #1b1a1d;
+  --color-header-bar: #0e0e0f91;
+  --color-btn: #3b9bf5;
+  --color-btn-hover: #fff;
+  --color-title-bg: #16161a;
+  --color-white-bg: #272430;
+  --color-font: #3b9bf5;
+  --color-desc: #fff;
+  --color-footer: #1b1729;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p,
+dd {
+  font-family: "Gamja Flower", cursive;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  padding: 50px 10px;
+  padding-bottom: 24px;
+}
+
+/* 768px 이상(desktop) */
+@media screen and (min-width: 768px) {
+  /* header */
+  .header-menu {
+    justify-content: right;
+  }
+
+  .header-menu li:hover {
+    background-color: #fff;
+    color: var(--color-font);
+    border-radius: 4px;
+  }
+
+  /*  title*/
+  .title-head {
+    font-size: 50px;
+    margin-bottom: 32px;
+  }
+
+  .title-desc {
+    font-size: 20px;
+    margin-bottom: 32px;
+  }
+
+  /* profile */
+
+  .profile-title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .profile-about {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .profileimg-box {
+    max-width: 325px;
+    width: 100%;
+    margin-right: 40px;
+  }
+
+  .profile-img {
+    display: block;
+    max-width: 425px;
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-desc {
+    padding: 20px 0;
+  }
+
+  .profile-desc h2 {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+
+  .profile-text {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .profile-text dt {
+    width: 70px;
+  }
+
+  .introduction {
+    flex-direction: row;
+  }
+
+  .introduction-box {
+    width: 350px;
+    height: 350px;
+    margin-right: 40px;
+  }
+
+  /* footer */
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-desc {
+    margin-right: 50px;
+  }
+
+  .footer-img {
+    margin-right: 30px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fadein {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
