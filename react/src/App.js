@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./component/Header/Header";
 import Profile from "./component/Profile/Profile";
 import Title from "./component/Title/Title";
@@ -7,8 +7,15 @@ import Data from "./component/Data.json";
 import IntroductionList from "./component/IntroductionList/IntroductionList";
 import DarkModeContext from "./context/DarkModeContext";
 import "./App.css";
+import Login from "./component/Login/Login";
+import { UserInfo } from "./UserInfo";
+
 export default function App() {
-  return (
+  const [isLogin, setIsLogin] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("UserInfo", JSON.stringify(UserInfo));
+  }, []);
+  return isLogin ? (
     <DarkModeContext>
       <Header />
       <Title data={Data} />
@@ -16,5 +23,7 @@ export default function App() {
       <IntroductionList data={Data} />
       <Footer data={Data} />
     </DarkModeContext>
+  ) : (
+    <Login data={setIsLogin} />
   );
 }
