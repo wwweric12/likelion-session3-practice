@@ -10,8 +10,7 @@ export default function Header() {
     <>
       <header className="header">
         <button className="btn" onClick={toggleDarkMode}>
-          {!darkMode && <BiMoon />}
-          {darkMode && <BiSun />}
+          {darkMode ? <BiSun /> : <BiMoon />}
         </button>
         <ul className="header-menu">
           <li>
